@@ -1,15 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('#create-task-form');
-  const input = document.querySelector('#new-task-description');
-  const taskList = document.querySelector('#tasks');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("create-task-form");
+  const input = document.getElementById("new-task-description");
+  const taskList = document.getElementById("tasks");
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // stop form from refreshing the page
 
-    const li = document.createElement('li');
-    li.textContent = input.value;
-    taskList.appendChild(li);
+    const taskText = input.value;
 
-    input.value = '';
+    if (taskText.trim() !== "") {
+      const li = document.createElement("li");
+      li.textContent = taskText;
+      taskList.appendChild(li);
+
+      input.value = ""; // clear the input
+    }
   });
 });
