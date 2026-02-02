@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskList = document.getElementById("tasks");
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // stop form from refreshing the page
+    event.preventDefault(); 
 
     const taskText = input.value;
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = taskText;
       taskList.appendChild(li);
 
-      input.value = ""; // clear the input
+      input.value = ""; 
     }
   });
 });
